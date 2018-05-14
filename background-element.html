@@ -1,6 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/sucession.dwt" codeOutsideHTMLIsLocked="false" -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/sucession.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link rel="stylesheet" type="text/css" href="css/sucession.css">
+<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css">
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
@@ -8,44 +13,62 @@
 <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
 </head>
 
-<body onload="includeHTML();">
-<form id="form1" name="form1" method="post" action="">
+<body >
 
+<form id="form1" name="form1" method="post" action="">
+	 <input type="button" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
   <!-- InstanceBeginEditable name="Main" --> 
   
-   <ul class="tabs">
-    
-    <li class="tab">
-        <input type="radio" name="tabs" checked="checked" id="tab1" />
-        <label for="tab1">General</label>
-        <div id="tab-content1" class="content">
-         	<div w3-include-html="background-element-general.html"></div>
-        </div>
-    </li>
-    
-    <li class="tab">
-      <input type="radio" name="tabs" id="tab2" />
-      <label for="tab2">Data field</label>   
-      <div id="tab-content2" class="content">
-          <h1>Tab content 2</h1>
-          <hr/>
-          <h3>Ut bibendum augue vel magna rhoncus</h3>
-          <br/>
-          <p>Nam cursus, massa ac imperdiet posuere, mauris metus gravida ligula, et rutrum ligula mi ut tellus. Quisque elit dolor, sagittis ac purus accumsan, sagittis rhoncus felis. Morbi nec bibendum arcu, sit amet pharetra orci. Nulla pulvinar ultrices quam. Cras nulla erat, eleifend non euismod vel, accumsan quis lacus. Ut bibendum augue vel magna rhoncus, sed rutrum massa vulputate. Nullam lectus diam, venenatis vel elit vel, ornare fermentum metus. Praesent euismod non mauris et dignissim. Sed in diam nec diam pellentesque lacinia at vitae lorem. Quisque et neque condimentum, viverra dolor mollis, feugiat justo.</p>    
-       </div>
-    </li>
-
-    
-    
+  
+  <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">General</a></li>
+    <li><a href="#tabs-2">Data field</a></li>
   </ul>
+  <div id="tabs-1">
+    <div w3-include-html="background-element-general.html"></div>  
+  </div>
+  <div id="tabs-2">
+  
+     <div w3-include-html="data-field.html"></div>
+  </div>
+</div>
+  
+  <script>
+  	$( document ).ready(function() {
+	$( "#tabs" ).tabs({
+	  beforeActivate: function (event, ui) {
+		if(ui.newPanel.attr('id')=='tabs-2'){
+			$( "#tabs-data-field" ).tabs();
+		}
+	  }
+	});
+     
+	});
+	
+	
+  	//$("a[href*='id=#tabs-2']").click(function(){
+//		alert('oi');
+//		$( "#tabs-data-field" ).tabs();
+//	});
+
+  
+  </script>
+  
   
   
   <!-- InstanceEndEditable -->
 </form>	
 </body>
-<!-- InstanceEnd --></html>
 
 <script>
+
+
+$(function() {
+   	includeHTML();
+}); 
+
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -73,4 +96,10 @@ function includeHTML() {
     }
   }
 }
+
+
 </script>
+
+<!-- InstanceEnd --></html>
+
+

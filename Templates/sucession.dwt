@@ -2,6 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <link rel="stylesheet" type="text/css" href="../css/sucession.css">
+<link rel="stylesheet" type="text/css" href="../js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css">
+<script src="../js/jquery-3.3.1.js"></script>
+<script src="../js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- TemplateBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
@@ -9,15 +13,22 @@
 <!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 </head>
 
-<body onload="includeHTML();">
-<form id="form1" name="form1" method="post" action="">
+<body >
 
+<form id="form1" name="form1" method="post" action="">
+	 <input type="button" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
   <!-- TemplateBeginEditable name="Main" --><!-- TemplateEndEditable -->
 </form>	
 </body>
-</html>
 
 <script>
+
+
+$(function() {
+   	includeHTML();
+}); 
+
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -48,3 +59,7 @@ function includeHTML() {
 
 
 </script>
+
+</html>
+
+

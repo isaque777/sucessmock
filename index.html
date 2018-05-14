@@ -1,6 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/sucession.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link rel="stylesheet" type="text/css" href="css/sucession.css">
+<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css">
+<script src="js/jquery-3.3.1.js"></script>
+<script src="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
@@ -8,18 +12,59 @@
 <!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
 </head>
 
-<body onload="includeHTML();">
-<form id="form1" name="form1" method="post" action="">
+<body >
 
+<form id="form1" name="form1" method="post" action="">
+	 <input type="button" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
   <!-- InstanceBeginEditable name="Main" --><input type="submit" name="Submit" value="HRIS Element" />
-	<input type="submit" name="Submit" value="Background" />
-	<input type="submit" name="Submit" value="User info" />
+  <input type="button" name="Submit2" value="Background" onclick="window.location.href='background-element.html';"/>
+  <input type="submit" name="Submit" value="User info" />
 	<input type="submit" name="Submit" value="Tab" />
 	<input type="submit" name="Submit" value="Element permission" />
 	<input type="submit" name="Submit" value="View Template" />
 	<input type="submit" name="Submit" value="Filters" /><!-- InstanceEndEditable -->
 </form>	
 </body>
+
+<script>
+
+
+$(function() {
+   	includeHTML();
+}); 
+
+
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /*loop through a collection of all HTML elements:*/
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /*make an HTTP request using the attribute value as the file name:*/
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /*remove the attribute, and call this function once more:*/
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      } 
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
+    }
+  }
+}
+
+
+</script>
+
 <!-- InstanceEnd --></html>
 
 <script>

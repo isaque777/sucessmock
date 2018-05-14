@@ -1,60 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/sucession.dwt" codeOutsideHTMLIsLocked="false" -->
-<head>
-<link rel="stylesheet" type="text/css" href="css/sucession.css">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<!-- InstanceBeginEditable name="doctitle" -->
-<title>Untitled Document</title>
-<!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
-</head>
 
-<body onload="includeHTML();">
-<form id="form1" name="form1" method="post" action="">
 
-  <!-- InstanceBeginEditable name="Main" -->  <label>Label
-  <input type="text" name="textfield" />
-  </label>
-  <p>
-    <label></label>
-    <label>Picklist
-    <input type="text" name="textfield3" />
-    </label>
-  </p>
-  <p>
-    <label>Picklist Parent Field
-    <input type="text" name="textfield4" />
-    </label>
-  </p><!-- InstanceEndEditable -->
-</form>	
-</body>
-<!-- InstanceEnd --></html>
+<div id="tabs-data-field">
+  <ul>
+    <li><a href="#tabs-data-field-tabs-1">General</a></li>
+    <li><a href="#tabs-data-field-tabs-2">Data field</a></li>
+  </ul>
+  <div id="tabs-data-field-tabs-1">
+    <div w3-include-html="data-field-general.html"></div>
+  </div>
+  <div id="tabs-data-field-tabs-2">
+     <div w3-include-html="data-field-field-name.html"></div>
+  </div>
+</div>
 
-<script>
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  /*loop through a collection of all HTML elements:*/
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    /*search for elements with a certain atrribute:*/
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      /*make an HTTP request using the attribute value as the file name:*/
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /*remove the attribute, and call this function once more:*/
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      } 
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      /*exit the function:*/
-      return;
-    }
-  }
-}
-</script>
+
+  <script>
+  	$( document ).ready(function() {
+	
+     $( "#tabs-data-field" ).tabs();
+	});
+  
+ 
+  
+  </script>
+  
