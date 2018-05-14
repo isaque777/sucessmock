@@ -9,7 +9,7 @@
 <!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
 </head>
 
-<body>
+<body onload="includeHTML();">
 <form id="form1" name="form1" method="post" action="">
 
   <!-- TemplateBeginEditable name="Main" --><!-- TemplateEndEditable -->
@@ -46,5 +46,5 @@ function includeHTML() {
   }
 }
 
-includeHTML();
+
 </script>
