@@ -22,15 +22,57 @@
 <body >
 
 <form id="form1" name="form1" method="post" action="">
-	 <input type="button"  class="btn btn-primary" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
+	<!-- <input type="button"  class="btn btn-primary" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>-->
   <!-- InstanceBeginEditable name="Main" -->
-  <input type="button"  class="btn btn-primary" name="Submit" value="HRIS Element" onclick="window.location.href='HRIS-element.html';" />
-  <input type="button"  class="btn btn-primary" name="Submit2" value="Background" onclick="window.location.href='background-element.html';"/>
-  <input type="button"  class="btn btn-primary" name="Submit" value="User info" onclick="window.location.href='userinfo-element.html';"/>
-	<input type="button"  class="btn btn-primary" name="Submit" value="Tab" />
-	<input type="button"  class="btn btn-primary" name="Submit" value="Element permission" />
-	<input type="button"  class="btn btn-primary" name="Submit" value="View Template" />
-	<input type="button"  class="btn btn-primary" name="Submit" value="Filters" /><!-- InstanceEndEditable -->
+  <div id="tabs-index">
+    <ul>
+      <li><a href="#tab-HRIS-element">HRIS Element</a></li>
+      <li><a href="#tab-background-element">Background</a></li>
+      <li><a href="#tab-userinfo-element">User info</a></li>
+      <li><a href="#tab-label">Tab</a></li>
+      <li><a href="#tab-element-permission">Element permission</a></li>
+      <li><a href="#tab-view-template">View Template</a></li>
+      <li><a href="#tab-filters">Filters</a></li>
+    </ul>
+    <div id="tab-HRIS-element">
+      <div w3-include-html="HRIS-element.html"></div>
+    </div>
+    <div id="tab-background-element">
+      <div w3-include-html="background-element.html"></div>
+    </div>
+    <div id="tab-userinfo-element">
+      <div w3-include-html="userinfo-element.html"></div>
+    </div>
+    <div id="tab-element-permission">
+      
+    </div>
+	<div id="tab-view-template">
+      
+    </div>
+	<div id="tab-filters">
+      
+    </div>
+  </div>
+  <script>
+	$(document).ready(function() {
+		$("#tabs-index").tabs({
+			beforeActivate : function(event, ui) {
+				if (ui.newPanel.attr('id') == 'tab-background-element') {
+					$("#tabs-background-element").tabs({
+						beforeActivate : function(event, ui) {
+							if (ui.newPanel.attr('id') == 'tabs-2') {
+								$("#tabs-data-field").tabs();
+							}
+						}
+					});
+				}
+			}
+		});
+		
+	});
+	
+  </script>
+  <!-- InstanceEndEditable -->
 </form>	
 </body>
 
@@ -74,7 +116,6 @@ function includeHTML() {
 </script>
 
 <!-- InstanceEnd --></html>
-
 <script>
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
