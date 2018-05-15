@@ -43,7 +43,10 @@
     <div id="tab-tab">
       <div w3-include-html="tab-element.html"></div>
     </div>
-	<div id="tab-element-permission"> </div>
+	<div id="tab-element-permission"> 
+	      <div w3-include-html="element-permission.html"></div>
+	</div>
+	
     <div id="tab-view-template"> </div>
     <div id="tab-filters"> </div>
   </div>
@@ -75,6 +78,17 @@
 					});
 				}else if (ui.newPanel.attr('id') == 'tab-tab') {
 					$("#tabs-tab-element").tabs({
+						beforeActivate : function(event, ui) {
+							if (ui.newPanel.attr('id') == 'tab-data-field') {
+								$("#tabs-data-field").tabs();
+							} else if (ui.newPanel.attr('id') == 'tab-rating-field') {
+								$("#tabs-rating-field").tabs();
+							}
+							
+						}
+					});
+				}else if (ui.newPanel.attr('id') == 'tab-element-permission') {
+					$("#tabs-element-permission").tabs({
 						beforeActivate : function(event, ui) {
 							if (ui.newPanel.attr('id') == 'tab-data-field') {
 								$("#tabs-data-field").tabs();
