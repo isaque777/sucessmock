@@ -17,7 +17,10 @@
 <!-- InstanceBeginEditable name="doctitle" -->
 <title>Untitled Document</title>
 <!-- InstanceEndEditable -->
-<!-- InstanceBeginEditable name="head" --><!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+
+<!-- InstanceEndEditable -->
 </head>
 
 <body >
@@ -25,27 +28,38 @@
 <form id="form1" name="form1" method="post" action="">
 	 <input type="button"  class="btn btn-primary" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
   <!-- InstanceBeginEditable name="Main" -->
-  <p>
-    <label>Add Hris Element</label>
-  </p>
-  <p>&nbsp;</p>
-  <p>
-    <label>
-    <input name="radiobutton" type="radio" value="radiobutton" />
-    From Default Hris</label>
-	<label>
-    <input name="radiobutton" type="radio" value="radiobutton" />
-    From Object Definition Zip</label>
-  </p>
   
-  <p>&nbsp;</p>
-  <p>
-    <label>Hris to copy
-    <select name="select">
-	<option >No other default Hris for this submodule</option>
-    </select>
-    </label>
-  </p>
+  <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">General</a></li>
+    <li><a href="#tabs-2">Data field</a></li>
+  </ul>
+  <div id="tabs-1">
+    <div w3-include-html="background-element-general.html"></div>  
+  </div>
+  <div id="tabs-2">
+  
+     <div w3-include-html="data-field.html"></div>
+  </div>
+</div>
+  
+  <script>
+  	$( document ).ready(function() {
+	$( "#tabs" ).tabs({
+	  beforeActivate: function (event, ui) {
+		if(ui.newPanel.attr('id')=='tabs-2'){
+			$( "#tabs-data-field" ).tabs();
+		}
+	  }
+	});
+     
+	});
+	
+
+  
+  </script>
+  
+  
   <!-- InstanceEndEditable -->
 </form>	
 </body>

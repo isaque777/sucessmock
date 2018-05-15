@@ -8960,7 +8960,7 @@ $.extend( Datepicker.prototype, {
 							( printDate.getTime() === today.getTime() ? " ui-datepicker-today" : "" ) ) + "'" + // highlight today (if different)
 							( ( !otherMonth || showOtherMonths ) && daySettings[ 2 ] ? " title='" + daySettings[ 2 ].replace( /'/g, "&#39;" ) + "'" : "" ) + // cell title
 							( unselectable ? "" : " data-handler='selectDay' data-event='click' data-month='" + printDate.getMonth() + "' data-year='" + printDate.getFullYear() + "'" ) + ">" + // actions
-							( otherMonth && !showOtherMonths ? "&#xa0;" : // display for other months
+							( otherMonth && !showOtherMonths ? " " : // display for other months
 							( unselectable ? "<span class='ui-state-default'>" + printDate.getDate() + "</span>" : "<a class='ui-state-default" +
 							( printDate.getTime() === today.getTime() ? " ui-state-highlight" : "" ) +
 							( printDate.getTime() === currentDate.getTime() ? " ui-state-active" : "" ) + // highlight selected day
@@ -9016,7 +9016,7 @@ $.extend( Datepicker.prototype, {
 		}
 
 		if ( !showMonthAfterYear ) {
-			html += monthHtml + ( secondary || !( changeMonth && changeYear ) ? "&#xa0;" : "" );
+			html += monthHtml + ( secondary || !( changeMonth && changeYear ) ? " " : "" );
 		}
 
 		// Year selection
@@ -9054,7 +9054,7 @@ $.extend( Datepicker.prototype, {
 
 		html += this._get( inst, "yearSuffix" );
 		if ( showMonthAfterYear ) {
-			html += ( secondary || !( changeMonth && changeYear ) ? "&#xa0;" : "" ) + monthHtml;
+			html += ( secondary || !( changeMonth && changeYear ) ? " " : "" ) + monthHtml;
 		}
 		html += "</div>"; // Close datepicker_header
 		return html;
@@ -12342,7 +12342,7 @@ $.widget( "ui.dialog", {
 		} );
 
 		// Support: IE
-		// Use type="button" to prevent enter keypresses in textboxes from closing the
+		// Use type="button"  class="btn btn-primary" to prevent enter keypresses in textboxes from closing the
 		// dialog in IE (#9312)
 		this.uiDialogTitlebarClose = $( "<button type='button'></button>" )
 			.button( {
@@ -12375,7 +12375,7 @@ $.widget( "ui.dialog", {
 		if ( this.options.title ) {
 			title.text( this.options.title );
 		} else {
-			title.html( "&#160;" );
+			title.html( " " );
 		}
 	},
 

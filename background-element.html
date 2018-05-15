@@ -2,9 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/sucession.dwt" codeOutsideHTMLIsLocked="false" -->
 <head>
 <link rel="stylesheet" type="text/css" href="css/sucession.css">
-<link rel="stylesheet" type="text/css" href="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css">
-<script src="js/jquery-3.3.1.js"></script>
-<script src="js/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="libs/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-dist/css/bootstrap-reboot.min.css.map">
+<link rel="stylesheet" type="text/css" href="libs/bootstrap-4.0.0-dist/css/bootstrap-grid.min.css">
+
+<script src="libs/jquery-3.3.1.js"></script>
+<script src="libs/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="libs/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+<script src="libs/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="libs/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <!-- InstanceBeginEditable name="doctitle" -->
@@ -16,15 +23,20 @@
 <body >
 
 <form id="form1" name="form1" method="post" action="">
-	 <input type="button" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
+	 <input type="button"  class="btn btn-primary" name="Submit-main" value="Main" onclick="window.location.href='index.html';"/>
   <!-- InstanceBeginEditable name="Main" --> 
   
   
   <div id="tabs">
   <ul>
+  	<li><a href="#tabs-0">Base Settings</a></li>
     <li><a href="#tabs-1">General</a></li>
     <li><a href="#tabs-2">Data field</a></li>
   </ul>
+   <div id="tabs-0">
+    <div w3-include-html="background-element-base-settings.html"></div>  
+  </div>
+  
   <div id="tabs-1">
     <div w3-include-html="background-element-general.html"></div>  
   </div>
@@ -46,11 +58,6 @@
      
 	});
 	
-	
-  	//$("a[href*='id=#tabs-2']").click(function(){
-//		alert('oi');
-//		$( "#tabs-data-field" ).tabs();
-//	});
 
   
   </script>
