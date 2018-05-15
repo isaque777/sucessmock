@@ -26,7 +26,7 @@
       <li><a href="#tab-HRIS-element">HRIS Element</a></li>
       <li><a href="#tab-background-element">Background</a></li>
       <li><a href="#tab-userinfo-element">User info</a></li>
-      <li><a href="#tab-label">Tab</a></li>
+      <li><a href="#tab-tab">Tab</a></li>
       <li><a href="#tab-element-permission">Element permission</a></li>
       <li><a href="#tab-view-template">View Template</a></li>
       <li><a href="#tab-filters">Filters</a></li>
@@ -40,7 +40,10 @@
     <div id="tab-userinfo-element">
       <div w3-include-html="userinfo-element.html"></div>
     </div>
-    <div id="tab-element-permission"> </div>
+    <div id="tab-tab">
+      <div w3-include-html="tab-element.html"></div>
+    </div>
+	<div id="tab-element-permission"> </div>
     <div id="tab-view-template"> </div>
     <div id="tab-filters"> </div>
   </div>
@@ -60,7 +63,18 @@
 						}
 					});
 				}else if (ui.newPanel.attr('id') == 'tab-userinfo-element') {
-					$("#tabs-user-info-element").tabs({
+					$("#tabs-userinfo-element").tabs({
+						beforeActivate : function(event, ui) {
+							if (ui.newPanel.attr('id') == 'tab-data-field') {
+								$("#tabs-data-field").tabs();
+							} else if (ui.newPanel.attr('id') == 'tab-rating-field') {
+								$("#tabs-rating-field").tabs();
+							}
+							
+						}
+					});
+				}else if (ui.newPanel.attr('id') == 'tab-tab') {
+					$("#tabs-tab-element").tabs({
 						beforeActivate : function(event, ui) {
 							if (ui.newPanel.attr('id') == 'tab-data-field') {
 								$("#tabs-data-field").tabs();
@@ -120,4 +134,3 @@ function includeHTML() {
 </script>
 <!-- InstanceEnd -->
 </html>
-
