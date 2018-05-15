@@ -1,21 +1,209 @@
 
-<div id="tabs-data-field">
-  <ul>
-    <li><a href="#tabs-data-field-tabs-0">Base Settings</a></li>
-    <li><a href="#tabs-data-field-tabs-1">General</a></li>
-
-  </ul>
-  <div id="tabs-data-field-tabs-0">
-    <div w3-include-html="data-field-base-settings.html"></div>
+<div class="row" >
+  <div class="col-md-3 sidebar">
+    <ul >
+      <li ><a href="#">Data Field element 1</a></li>
+      <li><a href="#">Data Field element 2</a></li>
+      <li><a href="#">Data Field element 3</a></li>
+      <li><a href="#">Data Field element 4</a></li>
+    </ul>
   </div>
-  <div id="tabs-data-field-tabs-1">
-    <div w3-include-html="data-field-general.html"></div>
+  <div  class="col-md-9">
+    <div >
+      <div >
+        <div class="row">
+          <div class="col-md-12">
+            <!-- content of page -->
+            <div id="tabs-data-field">
+              <ul>
+                <li><a href="#tabs-data-field-tab-base-settings">Base Settings</a></li>
+                <li><a href="#tabs-data-field-tab-label">Label</a></li>
+                <li><a href="#tabs-2">Data field</a></li>
+              </ul>
+              <div id="tabs-data-field-tab-base-settings">
+                <p>
+                  <label>Field Name
+                  <select>
+                    <option>name</option>
+                    <option>desc</option>
+                    <option>vfld1</option>
+                    <option>vfld2</option>
+                    <option>vfld3</option>
+                    <option>vfld4</option>
+                    <option>vfld5</option>
+                    <option>vfld6</option>
+                    <option>vfld7</option>
+                    <option>vfld8</option>
+                    <option>vfld9</option>
+                    <option>vfld10</option>
+                    <option>vfld11</option>
+                    <option>vfld12</option>
+                    <option>vfld13</option>
+                    <option>vfld14</option>
+                    <option>vfld15</option>
+                    <option>startDate</option>
+                    <option>endDate</option>
+                    <option>dfld1</option>
+                    <option>dfld2</option>
+                    <option>dfld3</option>
+                    <option>dfld4</option>
+                    <option>ifld1</option>
+                    <option>ifld2</option>
+                    <option>ifld3</option>
+                    <option>ifld4</option>
+                    <option>ifld5</option>
+                    <option>ffld1</option>
+                    <option>ffld2</option>
+                    <option>ffld3</option>
+                    <option>ffld4</option>
+                    <option>lastModified</option>
+                    <option>attachment1</option>
+                  </select>
+                  </label>
+                </p>
+                <p>
+                  <label>Picklist
+                  <input type="text" name="textfield3" />
+                  </label>
+                </p>
+                <p>
+                  <label>Picklist Parent Field
+                  <input type="text" name="textfield4" />
+                  </label>
+                </p>
+                <p>
+                  <label>Number Format Ref
+                  <input type="text" name="textfield4" />
+                  </label>
+                </p>
+                <p>
+                  <label>Field Display Format Ref
+                  <input type="text" name="textfield4" />
+                  </label>
+                </p>
+              </div>
+              <div id="tabs-data-field-tab-label">
+                <div w3-include-html="labels.html"></div>
+              </div>
+              <div id="tabs-2">
+                <p>
+                  <label>Label
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                  <label>Name
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                  <label>Description
+                  <textarea></textarea>
+                  </label>
+                </p>
+                <p>
+                  <label>Required </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Hidden </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Url Link </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Max length
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Display size
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Pii </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Document Type Id
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Max File Size KB
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>File Formats
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Hris Field Mapping
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Earning Field Mapping
+                  <input type="text" name="textfield" />
+                  </label>
+                </p>
+                <p>
+                <p>
+                  <label>Readonly </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Text Area Enabled </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+                <p>
+                  <label>Merge </label>
+                </p>
+                <p>
+                  <input type="radio" name="required" value="radio" />
+                  True
+                  <input type="radio" name="required" value="radio" />
+                  false </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<script>
-  	$( document ).ready(function() {
-	
-     $( "#tabs-data-field" ).tabs();
-	});
-  
-</script>
