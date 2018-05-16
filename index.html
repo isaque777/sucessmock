@@ -111,7 +111,13 @@
                     }
                   }
                 });
-                $("#tabs-hris-element-ref").tabs();
+                $("#tabs-hris-element-ref").tabs({
+                  beforeActivate: function (event, ui) {
+                    if (ui.newPanel.attr('id') == 'tabs-hris-element-ref-tab-mapping') {
+                      $("#tabs-element-permission-hris-element-ref-tab-hris-mapping").tabs();
+                    }
+                  }
+                });
               }
             }
           });
