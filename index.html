@@ -124,7 +124,14 @@
                 $("#tabs-view-template").tabs({
                   beforeActivate: function (event, ui) {
                     if (ui.newPanel.attr('id') == 'tabs-view-template-tab-edit-template') {
-                      $("#tabs-view-template-edit-template").tabs();
+                      $("#tabs-edit-template-content-base-settings").tabs();
+                      $("#tabs-view-template-edit-template").tabs({
+                        beforeActivate: function (event, ui) {
+                          if (ui.newPanel.attr('id') == 'tabs-view-template-edit-template-tab-content-base-settings') {
+                            $("#tabs-edit-template-content-base-settings").tabs();
+                          }
+                        }
+                      });
                     }
                   }
                 });
