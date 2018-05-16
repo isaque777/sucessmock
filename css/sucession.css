@@ -5,19 +5,20 @@
     padding: 0;
 }
 
-h1, h3{
-  text-transform: uppercase;
-  font-weight: normal;
+h1,
+h3 {
+    text-transform: uppercase;
+    font-weight: normal;
 }
 
-.tabs{
+.tabs {
     width: 600px;
     display: block;
     margin: 40px auto;
     position: relative;
 }
 
-.tabs .tab{
+.tabs .tab {
     float: left;
     display: block;
 }
@@ -40,46 +41,55 @@ h1, h3{
 }
 
 .tabs .content {
-	z-index: 0;/* or display: none; */
-	overflow: hidden;
-	width: 600px;
-	padding: 25px;
-	position: absolute;
-	top: 27px;
-	left: 0;
-	background: #CCCCCC;
-	color: ;
-	opacity:0;
-	transition: opacity 400ms ease-out;
-	background-color: ;
+    z-index: 0;
+    /* or display: none; */
+    overflow: hidden;
+    width: 600px;
+    padding: 25px;
+    position: absolute;
+    top: 27px;
+    left: 0;
+    background: #CCCCCC;
+    opacity: 0;
+    transition: opacity 400ms ease-out;
 }
 
-.tabs>.tab>[id^="tab"]:checked + label {
+.tabs>.tab>[id^="tab"]:checked+label {
     top: 0;
     background: #303030;
     color: #F5F5F5;
 }
 
-.tabs>.tab>[id^="tab"]:checked ~ [id^="tab-content"] {
-    z-index: 1;/* or display: block; */
-   
+.tabs>.tab>[id^="tab"]:checked~[id^="tab-content"] {
+    z-index: 1;
+    /* or display: block; */
     opacity: 1;
     transition: opacity 400ms ease-out;
 }
 
+/********************************************************/
 
 /********************************************************/
+
 /********************************************************/
-/********************************************************/
+
 /***********************SIDEBAR**************************/
 
 .sidebar {
- background-color:#CCCCCC;
+    background-color: #CCCCCC;
 }
 
 .sidebar ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
-
 /********************************************************/
+
+.bd-example {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    border-width: .2rem;
+    border-color: #303030;
+}
