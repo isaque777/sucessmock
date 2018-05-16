@@ -64,7 +64,9 @@
         <div id="tab-element-permission">
           <div w3-include-html="element-permission.html"></div>
         </div>
-        <div id="tab-view-template"> </div>
+        <div id="tab-view-template">
+          <div w3-include-html="view-template.html"></div>
+        </div>
         <div id="tab-filters"> </div>
       </div>
       <script>
@@ -115,6 +117,14 @@
                   beforeActivate: function (event, ui) {
                     if (ui.newPanel.attr('id') == 'tabs-hris-element-ref-tab-mapping') {
                       $("#tabs-element-permission-hris-element-ref-tab-hris-mapping").tabs();
+                    }
+                  }
+                });
+              } else if (ui.newPanel.attr('id') == 'tab-view-template') {
+                $("#tabs-view-template").tabs({
+                  beforeActivate: function (event, ui) {
+                    if (ui.newPanel.attr('id') == 'tab-data-field') {
+                      $("#tabs-data-field").tabs();
                     }
                   }
                 });
