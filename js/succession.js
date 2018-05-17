@@ -67,6 +67,34 @@ function includeHTML() {
   }
 }
 
+function label() {
+  var availablePickList = [
+    "Label Asp",
+    "Label BASIC",
+    "Label C",
+    "Label C++",
+    "Label Clojure",
+    "Label COBOL",
+    "Label ColdFusion",
+    "Label Erlang",
+    "Label Fortran",
+    "Label Groovy",
+    "Label Haskell",
+    "Label Java",
+    "Label JavaScript",
+    "Label Lisp",
+    "Label Perl",
+    "Label PHP",
+    "Label Python",
+    "Label Ruby",
+    "Label Scala",
+    "Label Scheme"
+  ];
+  $(".labels-autocomplete").autocomplete({
+    source: availablePickList
+  });
+}
+
 function pickList() {
   var availablePickList = [
     "Picklist ActionScript",
@@ -94,6 +122,36 @@ function pickList() {
   ];
   $(".picklists-autocomplete").autocomplete({
     source: availablePickList
+  });
+}
+
+function description() {
+  var availableDescription = [
+    "Description ActionScript",
+    "Description AppleScript",
+    "Description Asp",
+    "Description BASIC",
+    "Description C",
+    "Description C++",
+    "Description Clojure",
+    "Description COBOL",
+    "Description ColdFusion",
+    "Description Erlang",
+    "Description Fortran",
+    "Description Groovy",
+    "Description Haskell",
+    "Description Java",
+    "Description JavaScript",
+    "Description Lisp",
+    "Description Perl",
+    "Description PHP",
+    "Description Python",
+    "Description Ruby",
+    "Description Scala",
+    "Description Scheme"
+  ];
+  $(".descriptions-autocomplete").autocomplete({
+    source: availableDescription
   });
 }
 
@@ -176,6 +234,10 @@ $(document).ready(function () {
       }
 
       pickList();
+
+      description();
+
+      label();
 
       $(".dropdown-menu a").click(function () {
         $("#" + $("#" + this.id.replace('dropdown-', '')).parents().attr('id')).find("div").each(function (index, value) {
