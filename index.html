@@ -13,6 +13,7 @@
     <script src="libs/jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
     <script src="libs/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="libs/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script src="js/loading.js"></script>
     <script src="js/succession.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <!-- InstanceBeginEditable name="doctitle" -->
@@ -72,6 +73,15 @@
           <div w3-include-html="custom-filters-content.html"></div>
         </div>
       </div>
+      <script>
+        $(document).ready(function () {
+          waitingDialog.show();
+          setTimeout(function () {
+            waitingDialog.hide();
+          }, 3000);
+          succession.init();
+        });
+      </script>
       <!-- InstanceEndEditable -->
     </form>
   </body>
