@@ -73,7 +73,17 @@ $(document).ready(function () {
 
   $("#tabs-index").tabs({
     beforeActivate: function (event, ui) {
-      if (ui.newPanel.attr('id') == 'tab-background-element') {
+      if (ui.newPanel.attr('id') == 'tab-custom-filters') {
+        $("#tabs-custom-filters").tabs({
+          beforeActivate: function (event, ui) {
+            if (ui.newPanel.attr('id') == 'tab-data-field') {
+              $("#tabs-data-field").tabs();
+            } else if (ui.newPanel.attr('id') == 'tab-rating-field') {
+              $("#tabs-rating-field").tabs();
+            }
+          }
+        });
+      } else if (ui.newPanel.attr('id') == 'tab-background-element') {
         $("#tabs-background-element").tabs({
           beforeActivate: function (event, ui) {
             if (ui.newPanel.attr('id') == 'tab-data-field') {
