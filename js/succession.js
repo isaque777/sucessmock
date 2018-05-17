@@ -125,6 +125,34 @@ function pickList() {
   });
 }
 
+function roleAutocomplete() {
+  var availablePickList = [
+    "Role Asp",
+    "Role BASIC",
+    "Role C",
+    "Role C++",
+    "Role Clojure",
+    "Role COBOL",
+    "Role ColdFusion",
+    "Role Erlang",
+    "Role Fortran",
+    "Role Groovy",
+    "Role Haskell",
+    "Role Java",
+    "Role JavaScript",
+    "Role Lisp",
+    "Role Perl",
+    "Role PHP",
+    "Role Python",
+    "Role Ruby",
+    "Role Scala",
+    "Role Scheme"
+  ];
+  $(".roles-autocomplete").autocomplete({
+    source: availablePickList
+  });
+}
+
 function description() {
   var availableDescription = [
     "Description ActionScript",
@@ -238,6 +266,8 @@ $(document).ready(function () {
       description();
 
       label();
+
+      roleAutocomplete();
 
       $(".dropdown-menu a").click(function () {
         $("#" + $("#" + this.id.replace('dropdown-', '')).parents().attr('id')).find("div").each(function (index, value) {
