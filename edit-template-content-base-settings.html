@@ -1,34 +1,71 @@
-<div id="tabs-edit-template-content-base-settings">
-  <ul>
-    <li>
-      <a href="#tabs-edit-template-content-base-settings-tab-standard-element">Standard Element</a>
-    </li>
-    <li>
-      <a href="#tabs-edit-template-content-base-settings-tab-user-info-record-key">User Info</a>
-    </li>
-    <li>
-      <a href="#tabs-edit-template-content-base-settings-tab-background-element-ref">Background</a>
-    </li>
-    <li>
-      <a href="#tabs-edit-template-content-base-settings-tab-hris-element">Hris Element</a>
-    </li>
-    <li>
-      <a href="#tabs-edit-template-content-base-settings-tab-hris-action-ref-content">Hris Element</a>
-    </li>
-  </ul>
-  <div id="tabs-edit-template-content-base-settings-tab-standard-element">
-    <div w3-include-html="standard-element-ref.content.html"></div>
+<div id="tabs-edit-template-content-base-settings-table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Type</th>
+        <th scope="col">Description</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Standard Element</td>
+        <td>Standard Element 01</td>
+        <td>
+          <button type="button" class="btn btn-primary edit-dropdown">
+            <span class="glyphicon glyphicon-edit"></span> Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>User Info</td>
+        <td>User Info 01</td>
+        <td>
+          <button type="button" class="btn btn-primary edit-dropdown">Edit</button>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Hris Element</td>
+        <td>Hris Element 01</td>
+        <td>
+          <button type="button" class="btn btn-primary edit-dropdown">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div id="tabs-edit-template-content-base-settings-tab-content">
+  <div class="dropdown">
+    <button class="btn btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Select </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" id="dropdown-tabs-edit-template-content-base-settings-tab-standard-element" href="#">Standard Element</a>
+      <a class="dropdown-item" id="dropdown-tabs-edit-template-content-base-settings-tab-user-info-record-key" href="#">User Info</a>
+      <a class="dropdown-item" id="dropdown-tabs-edit-template-content-base-settings-tab-background-element-ref" href="#">Background</a>
+      <a class="dropdown-item" id="dropdown-tabs-edit-template-content-base-settings-tab-hris-element" href="#">Hris Element</a>
+      <a class="dropdown-item" id="dropdown-tabs-edit-template-content-base-settings-tab-hris-action-ref-content" href="#">Hris Action</a>
+    </div>
   </div>
-  <div id="tabs-edit-template-content-base-settings-tab-user-info-record-key">
-    <div w3-include-html="user-info-record.content.html"></div>
-  </div>
-  <div id="tabs-edit-template-content-base-settings-tab-background-element-ref">
-    <div w3-include-html="background-element-ref-content.html"></div>
-  </div>
-  <div id="tabs-edit-template-content-base-settings-tab-hris-element">
-    <div w3-include-html="hris-field-ref-content.html"></div>
-  </div>
-  <div id="tabs-edit-template-content-base-settings-tab-hris-action-ref-content">
-    <div w3-include-html="hris-action-ref-content.html"></div>
+  <div id="tabs-edit-template-content-base-settings-tab">
+    <div id="tabs-edit-template-content-base-settings-tab-standard-element" style="visibility: hidden; width: 0px; height: 0px;">
+      <div w3-include-html="standard-element-ref.content.html"></div>
+    </div>
+    <div id="tabs-edit-template-content-base-settings-tab-user-info-record-key" style="visibility: hidden; width: 0px; height: 0px;">
+      <div w3-include-html="user-info-record.content.html"></div>
+    </div>
+    <div id="tabs-edit-template-content-base-settings-tab-background-element-ref" style="visibility: hidden; width: 0px; height: 0px;">
+      <div w3-include-html="background-element-ref-content.html"></div>
+    </div>
+    <div id="tabs-edit-template-content-base-settings-tab-hris-element" style="visibility: hidden; width: 0px; height: 0px;">
+      <div w3-include-html="hris-field-ref-content.html"></div>
+    </div>
+    <div id="tabs-edit-template-content-base-settings-tab-hris-action-ref-content" style="visibility: hidden; width: 0px; height: 0px;">
+      <div w3-include-html="hris-action-ref-content.html"></div>
+    </div>
+    <button class="btn btn btn-primary" type="button" id="add-dropdown" style="visibility: hidden; width: 0px; height: 0px;" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false"> Add </button>
   </div>
 </div>
