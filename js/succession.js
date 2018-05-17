@@ -67,9 +67,40 @@ function includeHTML() {
   }
 }
 
+function pickList() {
+  var availablePickList = [
+    "Picklist ActionScript",
+    "Picklist AppleScript",
+    "Picklist Asp",
+    "Picklist BASIC",
+    "Picklist C",
+    "Picklist C++",
+    "Picklist Clojure",
+    "Picklist COBOL",
+    "Picklist ColdFusion",
+    "Picklist Erlang",
+    "Picklist Fortran",
+    "Picklist Groovy",
+    "Picklist Haskell",
+    "Picklist Java",
+    "Picklist JavaScript",
+    "Picklist Lisp",
+    "Picklist Perl",
+    "Picklist PHP",
+    "Picklist Python",
+    "Picklist Ruby",
+    "Picklist Scala",
+    "Picklist Scheme"
+  ];
+  $(".picklists-autocomplete").autocomplete({
+    source: availablePickList
+  });
+}
+
 
 $(document).ready(function () {
   includeHTML();
+
 
   $("#tabs-index").tabs({
     beforeActivate: function (event, ui) {
@@ -143,6 +174,8 @@ $(document).ready(function () {
           }
         });
       }
+
+      pickList();
 
       $(".dropdown-menu a").click(function () {
         $("#" + $("#" + this.id.replace('dropdown-', '')).parents().attr('id')).find("div").each(function (index, value) {
