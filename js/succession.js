@@ -24,6 +24,17 @@ function tabsViewTemplateEditTemplateTabContentBaseSettings() {
   });
 }
 
+
+function tabHrisElementRef() {
+  $(".tabs-hris-element-ref").tabs({
+    beforeActivate: function (event, ui) {
+      if (ui.newPanel.attr('id') == 'tabs-hris-element-ref-tab-mapping') {
+        $(".tabs-element-permission-hris-element-ref-tab-hris-mapping").tabs();
+      }
+    }
+  });
+}
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /*loop through a collection of all HTML elements:*/
@@ -102,19 +113,12 @@ $(document).ready(function () {
             }
           }
         });
-        $("#tabs-hris-element-ref").tabs({
-          beforeActivate: function (event, ui) {
-            if (ui.newPanel.attr('id') == 'tabs-hris-element-ref-tab-mapping') {
-              $("#tabs-element-permission-hris-element-ref-tab-hris-mapping").tabs();
-            }
-          }
-        });
+        tabHrisElementRef();
       } else if (ui.newPanel.attr('id') == 'tab-view-template') {
         $("#tabs-view-template").tabs({
           beforeActivate: function (event, ui) {
             if (ui.newPanel.attr('id') == 'tabs-view-template-tab-edit-template') {
               $("#tabs-edit-template-content-base-settings").tabs();
-              tabsViewTemplateEditTemplateTabContentBaseSettings();
               $("#tabs-view-template-edit-template").tabs({
                 beforeActivate: function (event, ui) {
                   if (ui.newPanel.attr('id') == 'tabs-view-template-edit-template-tab-content-base-settings') {
@@ -122,7 +126,10 @@ $(document).ready(function () {
                   }
                 }
               });
+            } else if (ui.newPanel.attr('id') == 'tabs-view-template-tab-hris-element') {
+              tabHrisElementRef();
             }
+            tabsViewTemplateEditTemplateTabContentBaseSettings();
           }
         });
       }
