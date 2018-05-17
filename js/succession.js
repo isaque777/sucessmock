@@ -125,6 +125,62 @@ function pickList() {
   });
 }
 
+function numberFormatRef() {
+  var availablePickList = [
+    "NumberFormatRef Asp",
+    "NumberFormatRef BASIC",
+    "NumberFormatRef C",
+    "NumberFormatRef C++",
+    "NumberFormatRef Clojure",
+    "NumberFormatRef COBOL",
+    "NumberFormatRef ColdFusion",
+    "NumberFormatRef Erlang",
+    "NumberFormatRef Fortran",
+    "NumberFormatRef Groovy",
+    "NumberFormatRef Haskell",
+    "NumberFormatRef Java",
+    "NumberFormatRef JavaScript",
+    "NumberFormatRef Lisp",
+    "NumberFormatRef Perl",
+    "NumberFormatRef PHP",
+    "NumberFormatRef Python",
+    "NumberFormatRef Ruby",
+    "NumberFormatRef Scala",
+    "NumberFormatRef Scheme"
+  ];
+  $(".numberFormatRefs-autocomplete").autocomplete({
+    source: availablePickList
+  });
+}
+
+function fieldDisplayFormatRef() {
+  var availablePickList = [
+    "FieldDisplayFormatRef Asp",
+    "FieldDisplayFormatRef BASIC",
+    "FieldDisplayFormatRef C",
+    "FieldDisplayFormatRef C++",
+    "FieldDisplayFormatRef Clojure",
+    "FieldDisplayFormatRef COBOL",
+    "FieldDisplayFormatRef ColdFusion",
+    "FieldDisplayFormatRef Erlang",
+    "FieldDisplayFormatRef Fortran",
+    "FieldDisplayFormatRef Groovy",
+    "FieldDisplayFormatRef Haskell",
+    "FieldDisplayFormatRef Java",
+    "FieldDisplayFormatRef JavaScript",
+    "FieldDisplayFormatRef Lisp",
+    "FieldDisplayFormatRef Perl",
+    "FieldDisplayFormatRef PHP",
+    "FieldDisplayFormatRef Python",
+    "FieldDisplayFormatRef Ruby",
+    "FieldDisplayFormatRef Scala",
+    "FieldDisplayFormatRef Scheme"
+  ];
+  $(".fieldDisplayFormatRefs-autocomplete").autocomplete({
+    source: availablePickList
+  });
+}
+
 function roleAutocomplete() {
   var availablePickList = [
     "Role Asp",
@@ -268,6 +324,10 @@ $(document).ready(function () {
       label();
 
       roleAutocomplete();
+
+      fieldDisplayFormatRef();
+
+      numberFormatRef();
 
       $(".dropdown-menu a").click(function () {
         $("#" + $("#" + this.id.replace('dropdown-', '')).parents().attr('id')).find("div").each(function (index, value) {
