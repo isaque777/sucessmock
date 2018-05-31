@@ -30,7 +30,7 @@
       <div id="tabs-index">
         <ul>
           <li>
-            <a href="#tab-HRIS-element">HRIS Element</a>
+            <a href="#tab-standard-element">Standard Element</a>
           </li>
           <li>
             <a href="#tab-background-element">Background</a>
@@ -51,8 +51,8 @@
             <a href="#tab-custom-filters">Filters</a>
           </li>
         </ul>
-        <div id="tab-HRIS-element">
-          <div w3-include-html="hris-element.html"></div>
+        <div id="tab-standard-element">
+          <div w3-include-html="standard-element.html"></div>
         </div>
         <div id="tab-background-element">
           <div w3-include-html="background-element.html"></div>
@@ -78,6 +78,7 @@
           waitingDialog.show();
           setTimeout(function () {
             waitingDialog.hide();
+            $("#tabs-tab-standard-element").tabs({});
           }, 3000);
           succession.init();
         });

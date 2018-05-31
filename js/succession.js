@@ -245,10 +245,20 @@ var succession = (function () {
 
   var initTabs = function () {
     includeHTML();
+
+    $("#tabs-index").on("tabsload", function (event, ui) {
+      tabStandardElement();
+    });
+
     $("#tabs-index").tabs({
+
       beforeActivate: function (event, ui) {
 
-        if (ui.newPanel.attr('id') == 'tab-custom-filters') {
+        if (ui.newPanel.attr('id') == 'tab-standard-element') {
+          $("#tabs-tab-standard-element").tabs({
+
+          });
+        } else if (ui.newPanel.attr('id') == 'tab-custom-filters') {
           $("#tabs-custom-filters").tabs({
             beforeActivate: function (event, ui) {
               if (ui.newPanel.attr('id') == 'tab-data-field') {
@@ -331,6 +341,7 @@ var succession = (function () {
 
         numberFormatRef();
 
+
         $(".dropdown-menu a").click(function () {
           $("#" + $("#" + this.id.replace('dropdown-', '')).parents().attr('id')).find("div").each(function (index, value) {
             if (value.id != null && value.id != "") {
@@ -352,6 +363,7 @@ var succession = (function () {
 
       }
     });
+
 
 
 
