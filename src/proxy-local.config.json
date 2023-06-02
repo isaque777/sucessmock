@@ -1,0 +1,9 @@
+{
+  "/proxy/*": {
+    "target": "http://localhost:8080",
+    "pathRewrite": { "^/proxy": "" },
+    "secure": true,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

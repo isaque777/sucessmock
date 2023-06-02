@@ -1,0 +1,9 @@
+{
+  "/proxy/*": {
+    "target": "https://api.metallandbrasil.tk",
+    "pathRewrite": { "^/proxy": "" },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
